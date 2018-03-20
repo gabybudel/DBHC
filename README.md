@@ -25,6 +25,7 @@ for the Swiss Household data:
 
 
 ```r
+library(DBHC)
 library(TraMineR)
 #> 
 #> TraMineR stable version 2.0-8 (Built: 2018-03-15)
@@ -49,14 +50,13 @@ sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
 #>      8             7D        D
 #>  [>] 2000 sequences in the data set
 #>  [>] min/max sequence length: 16/16
-res <- hmm.clust(sequences)
-#> Error in hmm.clust(sequences): could not find function "hmm.clust"
 
-# Heatmaps
-cluster <- 1  # display heatmaps for cluster 1
-transition.heatmap(res$partition[[cluster]]$transition_probs,
-                   res$partition[[cluster]]$initial_probs)
-#> Error in transition.heatmap(res$partition[[cluster]]$transition_probs, : could not find function "transition.heatmap"
-emission.heatmap(res$partition[[cluster]]$emission_probs)
-#> Error in emission.heatmap(res$partition[[cluster]]$emission_probs): could not find function "emission.heatmap"
+## Code below takes long time to run
+# res <- hmm.clust(sequences)
+
+## Heatmaps
+# cluster <- 1  # display heatmaps for cluster 1
+# transition.heatmap(res$partition[[cluster]]$transition_probs,
+#                    res$partition[[cluster]]$initial_probs)
+# emission.heatmap(res$partition[[cluster]]$emission_probs)
 ```

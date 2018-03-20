@@ -39,11 +39,13 @@ data("biofam", package = "TraMineR")
 # Clustering algorithm
 new.alphabet <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
-res <- hmm.clust(sequences)
 
-# Heatmaps
-cluster <- 1  # display heatmaps for cluster 1
-transition.heatmap(res$partition[[cluster]]$transition_probs,
-                   res$partition[[cluster]]$initial_probs)
-emission.heatmap(res$partition[[cluster]]$emission_probs)
+## Code below takes long time to run
+# res <- hmm.clust(sequences)
+
+## Heatmaps
+# cluster <- 1  # display heatmaps for cluster 1
+# transition.heatmap(res$partition[[cluster]]$transition_probs,
+#                    res$partition[[cluster]]$initial_probs)
+# emission.heatmap(res$partition[[cluster]]$emission_probs)
 ```
