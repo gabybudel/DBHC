@@ -30,6 +30,7 @@ Below a basic example of how to use package DBHC for obtaining sequence clusters
 for the Swiss Household data:
 
 ```{r example}
+library(DBHC)
 library(TraMineR)
 
 ## Swiss Household Data
