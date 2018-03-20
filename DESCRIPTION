@@ -1,0 +1,20 @@
+Package: DBHC
+Type: Package
+Title: Sequence Clustering with Discrete-Output HMMs
+Version: 0.0.0.9000
+Date: 2018-03-02
+Author: Gabriel Budel [aut, cre], Flavius Frasincar [aut]
+Maintainer: Gabriel Budel <gabysp_budel@hotmail.com>
+Description: This R package provides an implementation of the Discrete Bayesian 
+    HMM Clustering (DBHC) algorithm. The DBHC algorithm is an HMM Clustering 
+    algorithm that finds a mixture of discrete-output HMMs while using 
+    heuristics based on BIC to search for the optimal number of HMM states and 
+    the optimal number of clusters. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: seqHMM (>= 1.0.8), TraMineR (>= 2.0-7), reshape2 (>= 1.2.1), 
+    ggplot2 (>= 2.2.1)
+NeedsCompilation: no
+Repository: CRAN
+RoxygenNote: 6.0.1
