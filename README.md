@@ -27,10 +27,6 @@ for the Swiss Household data:
 ```r
 library(DBHC)
 library(TraMineR)
-#> 
-#> TraMineR stable version 2.0-8 (Built: 2018-03-15)
-#> Website: http://traminer.unige.ch
-#> Please type 'citation("TraMineR")' for citation information.
 
 ## Swiss Household Data
 data("biofam", package = "TraMineR")
@@ -38,25 +34,13 @@ data("biofam", package = "TraMineR")
 # Clustering algorithm
 new.alphabet <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
-#>  [>] state coding:
-#>        [alphabet]  [label]  [long label]
-#>      1             0P        P
-#>      2             1L        L
-#>      3             2M        M
-#>      4             3LM       LM
-#>      5             4C        C
-#>      6             5LC       LC
-#>      7             6LMC      LMC
-#>      8             7D        D
-#>  [>] 2000 sequences in the data set
-#>  [>] min/max sequence length: 16/16
 
-## Code below takes long time to run
-# res <- hmm.clust(sequences)
+# Code below takes long time to run
+res <- hmm.clust(sequences)
 
-## Heatmaps
-# cluster <- 1  # display heatmaps for cluster 1
-# transition.heatmap(res$partition[[cluster]]$transition_probs,
-#                    res$partition[[cluster]]$initial_probs)
-# emission.heatmap(res$partition[[cluster]]$emission_probs)
+# Heatmaps
+cluster <- 1  # display heatmaps for cluster 1
+transition.heatmap(res$partition[[cluster]]$transition_probs,
+                   res$partition[[cluster]]$initial_probs)
+emission.heatmap(res$partition[[cluster]]$emission_probs)
 ```
