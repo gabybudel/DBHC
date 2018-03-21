@@ -478,7 +478,7 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' new.alphabet <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 #' sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
 ## Code below not tested because it takes a lot of time to run #################
-#' \donttest{res <- hmm.clust(sequences)
+#' \dontrun{res <- hmm.clust(sequences)
 #'
 #' # Heatmaps
 #' cluster <- 1  # display heatmaps for cluster 1
