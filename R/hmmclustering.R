@@ -465,8 +465,7 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' id <- paste0("K-", 1:n)
 #' rownames(sequences) <- id
 #' sequences <- sequences[sample(1:n, n),]
-## Code below not tested because it takes a lot of time to run #################
-#' \donttest{res <- hmm.clust(sequences, id)}
+#' res <- hmm.clust(sequences, id)
 #'
 #'
 #' #############################################################################

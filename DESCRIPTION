@@ -1,8 +1,8 @@
 Package: DBHC
 Type: Package
 Title: Sequence Clustering with Discrete-Output HMMs
-Version: 0.0.1
-Date: 2018-03-02
+Version: 0.0.2
+Date: 2018-03-22
 Author: Gabriel Budel [aut, cre], Flavius Frasincar [aut]
 Maintainer: Gabriel Budel <gabysp_budel@hotmail.com>
 Description: This R package provides an implementation of the Discrete Bayesian 

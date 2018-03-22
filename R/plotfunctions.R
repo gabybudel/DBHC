@@ -39,8 +39,8 @@ transition.heatmap <- function(transition, initial = NULL, base_size = 10) {
     transition.m$to <- factor(transition.m$to, levels = colnames(transition))
   }
 
-  ggplot(transition.m, aes(to, from)) +
-    geom_tile(aes(fill = value), colour = "#272B30") +
+  ggplot(transition.m, aes(transition.m$to, transition.m$from)) +
+    geom_tile(aes(fill = transition.m$value), colour = "#272B30") +
     scale_fill_gradient2(name = "Scale", low = "white", high = "black") +
     theme_grey(base_size = base_size) + labs(x = "", y = "") +
     scale_x_discrete(expand = c(0, 0), position = "top") +
@@ -76,8 +76,8 @@ emission.heatmap <- function(emission, base_size = 10) {
                                    levels = rev(rownames(emission)))
   emission.m$symbol_names <- factor(emission.m$symbol_names,
                                     levels = colnames(emission))
-  ggplot(emission.m, aes(symbol_names, state_names)) +
-    geom_tile(aes(fill = value), colour = "#272B30") +
+  ggplot(emission.m, aes(emission.m$symbol_names, emission.m$state_names)) +
+    geom_tile(aes(fill = emission.m$value), colour = "#272B30") +
     scale_fill_gradient2(name = "Scale", low = "white", high = "black") +
     theme_grey(base_size = base_size) + labs(x = "", y = "") +
     scale_x_discrete(expand = c(0, 0), position = "top") +
