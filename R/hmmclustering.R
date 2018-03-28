@@ -665,6 +665,8 @@ hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
   final.partition <- prev.partition  # store final partition
   n.states <- sapply(final.partition, function(hmm) hmm$n_states) # get number of
                                                                   # states
+  names(bic.vec) <- c(1:length(final.partition))
+
   # Return list with final partition, data, and diagnostic variables
   return(list(sequences = sequences,
               id = id,
