@@ -448,12 +448,12 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' initials.2 <- c(0.5,0.5)
 #'
 #' # Simulate
-#' hmm.sim.1 <- simulate_hmm(n_sequences = 200,
+#' hmm.sim.1 <- simulate_hmm(n_sequences = 100,
 #'                           initial_probs = initials.1,
 #'                           transition_probs = transitions.1,
 #'                           emission_probs = emissions.1,
 #'                           sequence_length = 25)
-#' hmm.sim.2 <- simulate_hmm(n_sequences = 200,
+#' hmm.sim.2 <- simulate_hmm(n_sequences = 100,
 #'                           initial_probs = initials.2,
 #'                           transition_probs = transitions.2,
 #'                           emission_probs = emissions.2,
@@ -485,9 +485,8 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #'                    res$partition[[cluster]]$initial_probs)
 #' emission.heatmap(res$partition[[cluster]]$emission_probs)
 #' }
-#' \dontshow{
-#' ## Code for testing by CRAN, taking a subset of data and limiting
-#' ## number of clusters
+#'
+#' ## A smaller example, which takes less time to run
 #' subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
 #'
 #' # Clustering algorithm
@@ -507,7 +506,6 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' transition.heatmap(res$partition[[cluster]]$transition_probs,
 #'                    res$partition[[cluster]]$initial_probs)
 #' emission.heatmap(res$partition[[cluster]]$emission_probs)
-#' }
 #' @export
 hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
                       init.size  = 2, alphabet = NULL, K.max = NULL,

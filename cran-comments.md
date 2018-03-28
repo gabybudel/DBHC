@@ -3,7 +3,7 @@ This is a resubmission. In this version I have:
 
 * Adjusted the description (introduced abbreviations)
 
-* Added an example for testing only
+* Added an example for testing
 
 
 ## Test environments

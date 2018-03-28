@@ -44,4 +44,25 @@ cluster <- 1  # display heatmaps for cluster 1
 transition.heatmap(res$partition[[cluster]]$transition_probs,
                    res$partition[[cluster]]$initial_probs)
 emission.heatmap(res$partition[[cluster]]$emission_probs)
+
+## A smaller example, which takes less time to run
+subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
+
+# Clustering algorithm
+res <- hmm.clust(subset, K.max = 3)
+
+# Number of clusters
+print(res$n.clusters)
+
+# Table of cluster memberships
+table(res$memberships[,"cluster"])
+
+# BIC for each number of clusters
+print(res$bic)
+
+# Heatmaps
+cluster <- 1  # display heatmaps for cluster 1
+transition.heatmap(res$partition[[cluster]]$transition_probs,
+                   res$partition[[cluster]]$initial_probs)
+emission.heatmap(res$partition[[cluster]]$emission_probs)
 ```

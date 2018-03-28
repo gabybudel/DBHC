@@ -82,12 +82,12 @@ colnames(emissions.2) <- output.labels
 initials.2 <- c(0.5,0.5)
 
 # Simulate
-hmm.sim.1 <- simulate_hmm(n_sequences = 200,
+hmm.sim.1 <- simulate_hmm(n_sequences = 100,
                           initial_probs = initials.1,
                           transition_probs = transitions.1,
                           emission_probs = emissions.1,
                           sequence_length = 25)
-hmm.sim.2 <- simulate_hmm(n_sequences = 200,
+hmm.sim.2 <- simulate_hmm(n_sequences = 100,
                           initial_probs = initials.2,
                           transition_probs = transitions.2,
                           emission_probs = emissions.2,
@@ -118,10 +118,25 @@ transition.heatmap(res$partition[[cluster]]$transition_probs,
                    res$partition[[cluster]]$initial_probs)
 emission.heatmap(res$partition[[cluster]]$emission_probs)
 }
-\dontshow{
-## Code for testing by CRAN, taking a subset of data and limiting
-## number of clusters
+
+## A smaller example, which takes less time to run
 subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
 
-}
+# Clustering algorithm
+res <- hmm.clust(subset, K.max = 3)
+
+# Number of clusters
+print(res$n.clusters)
+
+# Table of cluster memberships
+table(res$memberships[,"cluster"])
+
+# BIC for each number of clusters
+print(res$bic)
+
+# Heatmaps
+cluster <- 1  # display heatmaps for cluster 1
+transition.heatmap(res$partition[[cluster]]$transition_probs,
+                   res$partition[[cluster]]$initial_probs)
+emission.heatmap(res$partition[[cluster]]$emission_probs)
 }
