@@ -1,9 +1,9 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Made the variable calls in 'plotfunctions.R' binding. Thanks to Uwe Ligges 
-  pointing out where the problem occurrs, I know found a way to prevent this 
-  problem from occurring. 
+* Adjusted the description (introduced abbreviations)
+
+* Added an example for testing only
 
 
 ## Test environments
