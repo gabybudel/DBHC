@@ -485,6 +485,29 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #'                    res$partition[[cluster]]$initial_probs)
 #' emission.heatmap(res$partition[[cluster]]$emission_probs)
 #' }
+#' \dontshow{
+#' ## Code for testing by CRAN, taking a subset of data and limiting
+#' ## number of clusters
+#' subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
+#'
+#' # Clustering algorithm
+#' res <- hmm.clust(subset, K.max = 3)
+#'
+#' # Number of clusters
+#' print(res$n.clusters)
+#'
+#' # Table of cluster memberships
+#' table(res$memberships[,"cluster"])
+#'
+#' # BIC for each number of clusters
+#' print(res$bic)
+#'
+#' # Heatmaps
+#' cluster <- 1  # display heatmaps for cluster 1
+#' transition.heatmap(res$partition[[cluster]]$transition_probs,
+#'                    res$partition[[cluster]]$initial_probs)
+#' emission.heatmap(res$partition[[cluster]]$emission_probs)
+#' }
 #' @export
 hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
                       init.size  = 2, alphabet = NULL, K.max = NULL,
@@ -629,9 +652,11 @@ hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
       if(K == K.max) {
         # Max number of clusters reached
         done <- T
+        prev.partition <- curr.partition
+        prev.memberships <- curr.memberships
         if(print) {
           print(paste0("Maximum number of clusters reached: ", K.max))
-          print(paste0("BIC: ",curr.bic))
+          print(paste0("BIC: ", curr.bic))
         }
       }
     }

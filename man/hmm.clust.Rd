@@ -99,7 +99,7 @@ n <- nrow(sequences)
 id <- paste0("K-", 1:n)
 rownames(sequences) <- id
 sequences <- sequences[sample(1:n, n),]
-\donttest{res <- hmm.clust(sequences, id)}
+res <- hmm.clust(sequences, id)
 
 
 #############################################################################
@@ -117,5 +117,11 @@ cluster <- 1  # display heatmaps for cluster 1
 transition.heatmap(res$partition[[cluster]]$transition_probs,
                    res$partition[[cluster]]$initial_probs)
 emission.heatmap(res$partition[[cluster]]$emission_probs)
+}
+\dontshow{
+## Code for testing by CRAN, taking a subset of data and limiting
+## number of clusters
+subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
+
 }
 }
