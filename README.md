@@ -10,18 +10,19 @@ output:
 
 # DBHC
 
-Package DBHC is an implementation of the DBHC algorithm, an HMM sequence 
-clustering algorithm that finds a mixture of discrete-output HMMs. The algorithm 
-uses heuristics based on BIC to search for the optimal number of hidden states 
-ineach HMM and the optimal number of clusters. The packages provides functions 
-for finding clusters in discrete sequence data with the DBHC algorithm and for 
-plotting heatmaps of the probability matrices that are estimated in the cluster 
-models. 
+Package DBHC is an implementation of a sequence clustering algorithm that uses a 
+mixture of discrete-output hidden Markov models (HMMs), the Discrete Bayesian 
+HMM Clustering (DBHC) algorithm. The algorithm uses heuristics based on the 
+Bayesian Information Criterion (BIC) to search for the optimal number of hidden 
+states in each HMM and the optimal number of clusters. The packages provides 
+functions for finding clusters in discrete sequence data with the DBHC algorithm 
+and for plotting heatmaps of the probability matrices that are estimated in the 
+cluster models. 
 
 ## Example
 
 Below a basic example of how to use package DBHC for obtaining sequence clusters
-for the Swiss Household data:
+for the Swiss Household data in package TraMineR:
 
 
 ```r
