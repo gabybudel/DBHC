@@ -465,8 +465,14 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' id <- paste0("K-", 1:n)
 #' rownames(sequences) <- id
 #' sequences <- sequences[sample(1:n, n),]
-#' res <- hmm.clust(sequences, id)
+## Code below not tested because it takes a lot of time to run #################
+#' \dontrun{res <- hmm.clust(sequences, id = rownames(sequences))}
 #'
+#' \dontshow{
+#' ## A smaller example, which takes less time to run
+#' subset <- sequences[sample(1:n, 10),]
+#' res <- hmm.clust(subset, id = rownames(subset), K.max = 2)
+#' }
 #'
 #' #############################################################################
 #'
@@ -477,7 +483,8 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' new.alphabet <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 #' sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
 ## Code below not tested because it takes a lot of time to run #################
-#' \dontrun{res <- hmm.clust(sequences)
+#' \dontrun{
+#' res <- hmm.clust(sequences)
 #'
 #' # Heatmaps
 #' cluster <- 1  # display heatmaps for cluster 1
@@ -663,7 +670,7 @@ hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
   final.partition <- prev.partition  # store final partition
   n.states <- sapply(final.partition, function(hmm) hmm$n_states) # get number of
                                                                   # states
-  names(bic.vec) <- c(1:length(final.partition))
+  names(bic.vec) <- c(1:length(bic.vec))
 
   # Return list with final partition, data, and diagnostic variables
   return(list(sequences = sequences,

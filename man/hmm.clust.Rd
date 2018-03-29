@@ -99,8 +99,13 @@ n <- nrow(sequences)
 id <- paste0("K-", 1:n)
 rownames(sequences) <- id
 sequences <- sequences[sample(1:n, n),]
-res <- hmm.clust(sequences, id)
+\dontrun{res <- hmm.clust(sequences, id = rownames(sequences))}
 
+\dontshow{
+## A smaller example, which takes less time to run
+subset <- sequences[sample(1:n, 10),]
+res <- hmm.clust(subset, id = rownames(subset), K.max = 2)
+}
 
 #############################################################################
 
@@ -110,7 +115,8 @@ data("biofam", package = "TraMineR")
 # Clustering algorithm
 new.alphabet <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
-\dontrun{res <- hmm.clust(sequences)
+\dontrun{
+res <- hmm.clust(sequences)
 
 # Heatmaps
 cluster <- 1  # display heatmaps for cluster 1
