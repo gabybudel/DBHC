@@ -470,7 +470,7 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #'
 #' \dontshow{
 #' ## A smaller example, which takes less time to run
-#' subset <- sequences[sample(1:n, 10),]
+#' subset <- sequences[sample(1:n, 6),]
 #' res <- hmm.clust(subset, id = rownames(subset), K.max = 2)
 #' }
 #'
