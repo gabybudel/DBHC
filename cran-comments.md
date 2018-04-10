@@ -5,6 +5,8 @@ This is a resubmission. In this version I have:
 
 * Added an example for testing
 
+* Shortened examples
+
 
 ## Test environments
 * local Windows 10 install, R 3.4.4
