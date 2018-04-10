@@ -491,8 +491,8 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' ## A smaller example, which takes less time to run
 #' subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
 #'
-#' # Clustering algorithm
-#' res <- hmm.clust(subset, K.max = 3)
+#' # Clustering algorithm, limiting number of clusters to 2
+#' res <- hmm.clust(subset, K.max = 2)
 #'
 #' # Number of clusters
 #' print(res$n.clusters)
