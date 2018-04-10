@@ -101,11 +101,6 @@ rownames(sequences) <- id
 sequences <- sequences[sample(1:n, n),]
 \dontrun{res <- hmm.clust(sequences, id = rownames(sequences))}
 
-\dontshow{
-## A smaller example, which takes less time to run
-subset <- sequences[sample(1:n, 6),]
-res <- hmm.clust(subset, id = rownames(subset), K.max = 2)
-}
 
 #############################################################################
 
