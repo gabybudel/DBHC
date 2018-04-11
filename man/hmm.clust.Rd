@@ -59,7 +59,8 @@ number of clusters.
 \examples{
 ## Simulated data
 library(seqHMM)
-\donttest{output.labels <-  c("H", "T")
+\donttest{
+output.labels <-  c("H", "T")
 
 # HMM 1
 states.1 <- c("A", "B", "C")
@@ -120,7 +121,9 @@ transition.heatmap(res$partition[[cluster]]$transition_probs,
 emission.heatmap(res$partition[[cluster]]$emission_probs)
 }
 
+
 ## A smaller example, which takes less time to run
+\donttest{
 subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
 
 # Clustering algorithm, limiting number of clusters to 2
@@ -140,4 +143,5 @@ cluster <- 1  # display heatmaps for cluster 1
 transition.heatmap(res$partition[[cluster]]$transition_probs,
                    res$partition[[cluster]]$initial_probs)
 emission.heatmap(res$partition[[cluster]]$emission_probs)
+}
 }
