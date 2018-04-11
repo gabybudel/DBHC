@@ -425,7 +425,8 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' @examples
 #' ## Simulated data
 #' library(seqHMM)
-#' output.labels <-  c("H", "T")
+## Code below not tested because it takes a while to run #################
+#' \donttest{output.labels <-  c("H", "T")
 #'
 #' # HMM 1
 #' states.1 <- c("A", "B", "C")
@@ -465,9 +466,8 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' id <- paste0("K-", 1:n)
 #' rownames(sequences) <- id
 #' sequences <- sequences[sample(1:n, n),]
-## Code below not tested because it takes a lot of time to run #################
-#' \dontrun{res <- hmm.clust(sequences, id = rownames(sequences))}
-#'
+#' res <- hmm.clust(sequences, id = rownames(sequences))
+#' }
 #'
 #' #############################################################################
 #'
@@ -477,7 +477,7 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' # Clustering algorithm
 #' new.alphabet <- c("P", "L", "M", "LM", "C", "LC", "LMC", "D")
 #' sequences <- seqdef(biofam[,10:25], alphabet = 0:7, states = new.alphabet)
-## Code below not tested because it takes a lot of time to run #################
+## Code below not run because it takes a lot of time to run #################
 #' \dontrun{
 #' res <- hmm.clust(sequences)
 #'
