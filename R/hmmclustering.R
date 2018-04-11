@@ -426,7 +426,8 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' ## Simulated data
 #' library(seqHMM)
 ## Code below not tested because it takes a while to run #################
-#' \donttest{output.labels <-  c("H", "T")
+#' \donttest{
+#' output.labels <-  c("H", "T")
 #'
 #' # HMM 1
 #' states.1 <- c("A", "B", "C")
@@ -488,7 +489,9 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' emission.heatmap(res$partition[[cluster]]$emission_probs)
 #' }
 #'
+#'
 #' ## A smaller example, which takes less time to run
+#' \donttest{
 #' subset <- sequences[sample(1:nrow(sequences), 20, replace = FALSE),]
 #'
 #' # Clustering algorithm, limiting number of clusters to 2
@@ -508,6 +511,7 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' transition.heatmap(res$partition[[cluster]]$transition_probs,
 #'                    res$partition[[cluster]]$initial_probs)
 #' emission.heatmap(res$partition[[cluster]]$emission_probs)
+#' }
 #' @export
 hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
                       init.size  = 2, alphabet = NULL, K.max = NULL,
