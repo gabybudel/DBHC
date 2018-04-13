@@ -425,8 +425,6 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' @examples
 #' ## Simulated data
 #' library(seqHMM)
-## Code below not tested because it takes a while to run #################
-#' \donttest{
 #' output.labels <-  c("H", "T")
 #'
 #' # HMM 1
@@ -467,7 +465,14 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' id <- paste0("K-", 1:n)
 #' rownames(sequences) <- id
 #' sequences <- sequences[sample(1:n, n),]
+## Code below not tested because it takes a while to run #################
+#' \donttest{
 #' res <- hmm.clust(sequences, id = rownames(sequences))
+#' }
+#'
+#' \dontshow{
+#' subset <- sequences[sample(1:n, 4),]
+#' res <- hmm.clust(subset, id = rownames(subset), K.max = 2, seed.size = 2)
 #' }
 #'
 #' #############################################################################
@@ -511,6 +516,13 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' transition.heatmap(res$partition[[cluster]]$transition_probs,
 #'                    res$partition[[cluster]]$initial_probs)
 #' emission.heatmap(res$partition[[cluster]]$emission_probs)
+#' }
+#'
+#' \dontshow{
+#' subset <- sequences[sample(1:nrow(sequences), 4, replace = FALSE),]
+#'
+#' # Clustering algorithm, limiting number of clusters to 2
+#' res <- hmm.clust(subset, K.max = 2, seed.size = 2)
 #' }
 #' @export
 hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
