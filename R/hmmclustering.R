@@ -470,10 +470,6 @@ size.search <- function(sequences, log_space = FALSE, print = FALSE) {
 #' res <- hmm.clust(sequences, id = rownames(sequences))
 #' }
 #'
-#' \dontshow{
-#' subset <- sequences[sample(1:n, 4),]
-#' res <- hmm.clust(subset, id = rownames(subset), K.max = 2, seed.size = 2)
-#' }
 #'
 #' #############################################################################
 #'
