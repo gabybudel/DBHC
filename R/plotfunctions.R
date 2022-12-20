@@ -22,7 +22,7 @@ transition.heatmap <- function(transition, initial = NULL, base_size = 10) {
       stop("initial must be a numerical vector.")
     }
   }
-  if(class(transition) != "matrix") {
+  if(class(transition)[1] != "matrix") {
     stop("transition must be a matrix.")
   }
   if(!is.numeric(transition)) {
@@ -64,7 +64,7 @@ transition.heatmap <- function(transition, initial = NULL, base_size = 10) {
 #' @seealso See \code{\link{hmm.clust}} for an example.
 #' @export
 emission.heatmap <- function(emission, base_size = 10) {
-  if(class(emission) != "matrix") {
+  if(class(emission)[1] != "matrix") {
     stop("emission must be a matrix.")
   }
   if(!is.numeric(emission)) {
