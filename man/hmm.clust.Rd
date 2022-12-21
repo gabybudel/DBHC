@@ -4,9 +4,18 @@
 \alias{hmm.clust}
 \title{DBHC Algorithm}
 \usage{
-hmm.clust(sequences, id = NULL, smoothing = 1e-04, eps = 0.001,
-  init.size = 2, alphabet = NULL, K.max = NULL, log_space = FALSE,
-  print = FALSE, seed.size = 3)
+hmm.clust(
+  sequences,
+  id = NULL,
+  smoothing = 1e-04,
+  eps = 0.001,
+  init.size = 2,
+  alphabet = NULL,
+  K.max = NULL,
+  log_space = FALSE,
+  print = FALSE,
+  seed.size = 3
+)
 }
 \arguments{
 \item{sequences}{An \code{stslist} object (see

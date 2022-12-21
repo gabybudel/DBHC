@@ -4,8 +4,15 @@
 \alias{select.seeds}
 \title{Seed Selection Procedure}
 \usage{
-select.seeds(sequences, log_space = FALSE, K, seed.size = 3,
-  init.size = 2, print = FALSE, smoothing = 1e-04)
+select.seeds(
+  sequences,
+  log_space = FALSE,
+  K,
+  seed.size = 3,
+  init.size = 2,
+  print = FALSE,
+  smoothing = 1e-04
+)
 }
 \arguments{
 \item{sequences}{An \code{stslist} object (see

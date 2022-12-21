@@ -1,15 +1,11 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Adjusted the description (introduced abbreviations)
-
-* Added an example for testing
-
-* Shortened examples
+* Removed the assumption that class of matrix has length 1
 
 
 ## Test environments
-* local Windows 10 install, R 3.4.4
+* local Windows 10 install, R 4.2.2
 * Ubuntu 14.04 (on travis-ci), R 3.4.4
 
 ## R CMD check results

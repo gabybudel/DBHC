@@ -20,4 +20,4 @@ Imports: seqHMM (>= 1.0.8), TraMineR (>= 2.0-7), reshape2 (>= 1.2.1),
     ggplot2 (>= 2.2.1)
 NeedsCompilation: no
 Repository: CRAN
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.3
