@@ -2,6 +2,7 @@
 This is a resubmission. In this version I have:
 
 * Removed the assumption that class of matrix has length 1
+* Made smaller example execute on test
 
 
 ## Test environments
