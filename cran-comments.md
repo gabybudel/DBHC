@@ -3,6 +3,7 @@ This is a resubmission. In this version I have:
 
 * Removed the assumption that class of matrix has length 1
 * Made smaller example execute on test
+* Added test directory with simple test for error
 
 
 ## Test environments
