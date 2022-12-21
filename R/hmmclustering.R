@@ -525,9 +525,9 @@ hmm.clust <- function(sequences, id = NULL, smoothing = 1e-04, eps = 1e-03,
                       init.size  = 2, alphabet = NULL, K.max = NULL,
                        log_space = FALSE, print = FALSE, seed.size = 3) {
   # Error handling
-  if(!("stslist" %in% class(sequences))) {
+  if(!is(sequences, "stslist")) {
     # User did not provide stslist object
-    if(class(sequences) == "data.frame") {
+    if(is(sequences, "data.frame")) {
       # Convert data.frame to stslist
       sequences <- seqdef(sequences)
     } else {

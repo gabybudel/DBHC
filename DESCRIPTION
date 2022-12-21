@@ -1,8 +1,8 @@
 Package: DBHC
 Type: Package
 Title: Sequence Clustering with Discrete-Output HMMs
-Version: 0.0.2
-Date: 2018-04-10
+Version: 0.0.3
+Date: 2022-12-21
 Author: Gabriel Budel [aut, cre], Flavius Frasincar [aut]
 Maintainer: Gabriel Budel <gabysp_budel@hotmail.com>
 Description: Provides an implementation of a mixture of hidden Markov models 
